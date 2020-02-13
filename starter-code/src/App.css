@@ -21,6 +21,20 @@
 .App-intro {
   font-size: large;
 }
+.box {
+  width: 470px;
+  height: 100px;
+}
+
+input.input {
+  width: 60px;
+  height: 60px;
+}
+
+button.button.is-info {
+  height: 60px;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
