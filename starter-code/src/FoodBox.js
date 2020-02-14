@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 
 class FoodBox extends Component {
+    
+
+    addTodayFood = () => {
+        return (
+            <div class="column1">
+            <div>
+            Today's Foods
+            </div>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            </div>
+        )
+      }
+    
     render() {
         return (
             <div>
@@ -29,7 +44,7 @@ class FoodBox extends Component {
                             />
                             </div>
                             <div className="control">
-                            <button className="button is-info">
+                            <button onClick={() => this.addTodayFood()} className="button is-info">
                                 +
                             </button>
                             </div>

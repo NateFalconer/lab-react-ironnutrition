@@ -9,8 +9,10 @@ class App extends Component {
 
 
   state = {
-    foods,
+    foods: foods,
+    allFoods: foods,
     foodForm:false
+
   }
 //  old code, redone for iteration 3
 // state = {
@@ -48,7 +50,8 @@ handleFormSubmit = (e) => {
 
 
   this.setState({
-    foods:newFoods
+    foods:newFoods,
+    allFoods:newFoods,
   })
 }
 
@@ -60,8 +63,9 @@ toggleFoodForm = () => {
 }
 
 handleInputChange = (e) => {
-  console.log('change', e.target.name, e.target.value)
-  this.setState( { [e.target.name] : e.target.value } ) 
+  this.setState({ 
+    [e.target.name]: e.target.value 
+  }) 
 }
 
 showFoodForm = () => {
@@ -79,14 +83,51 @@ showFoodForm = () => {
     }
   }
 
+searchFood = (e) => {
+  let newFoods = [...this.state.allFoods]
+  let filteredFoods = newFoods.filter(eachFood => {
+    return eachFood.name.toLowerCase().includes(e.target.value.toLowerCase())
+  })
+  this.setState({
+    foods:filteredFoods
+  })
+}
+
+todaysFood = () => {
+  return (
+      <div class="column1">
+      <div>
+      Today's Foods
+      </div>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      </div>
+  )
+}
+
+// addTodayFood = (e) => {
+//   return (
+//       <div class="column1">
+//       <div>
+//       Today's Foods
+//       </div>
+//       <tr></tr>
+//       <tr></tr>
+//       <tr></tr>
+//       </div>
+//   )
+// }
+
+
   render() {
     return (
       <div class="App">
         <h1>IronNutrition</h1>
+        <input type="text" placeholder="Search.." name="search" onChange={this.searchFood} />
         <br></br>
         {this.showFoodForm()}
         <br></br>
-
 
         {this.showFoods()}
       </div>

@@ -35,6 +35,10 @@ button.button.is-info {
   height: 60px;
 }
 
+.column1 {
+  float: right;
+  padding-right: 150px;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
