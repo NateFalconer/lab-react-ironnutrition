@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 class FoodBox extends Component {
     
 
-    addTodayFood = () => {
-        return (
-            <div class="column1">
-            <div>
-            Today's Foods
-            </div>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            </div>
-        )
-      }
+    // addTodayFood = () => {
+    //     return (
+    //         <div class="column1">
+    //         <div>
+    //         Today's Foods
+    //         </div>
+    //         <tr></tr>
+    //         <tr></tr>
+    //         <tr></tr>
+    //         </div>
+    //     )
+    //   }
     
     render() {
         return (
@@ -23,7 +23,7 @@ class FoodBox extends Component {
                     <article className="media">
                         <div className="media-left">
                         <figure className="image is-64x64">
-                            <img src={this.props.image} />
+                            <img src={this.props.image} alt={this.props.imageName}/>
                         </figure>
                         </div>
                         <div className="media-content">

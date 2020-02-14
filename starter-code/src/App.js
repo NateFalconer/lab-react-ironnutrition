@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'bulma/css/bulma.css';
 import foods from './foods.json'
@@ -93,18 +92,18 @@ searchFood = (e) => {
   })
 }
 
-todaysFood = () => {
-  return (
-      <div class="column1">
-      <div>
-      Today's Foods
-      </div>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      </div>
-  )
-}
+// todaysFood = () => {
+//   return (
+//       <div class="column1">
+//       <div>
+//       Today's Foods
+//       </div>
+//       <tr></tr>
+//       <tr></tr>
+//       <tr></tr>
+//       </div>
+//   )
+// }
 
 // addTodayFood = (e) => {
 //   return (
@@ -122,9 +121,11 @@ todaysFood = () => {
 
   render() {
     return (
-      <div class="App">
+      <div>
+      <div className="sb">
         <h1>IronNutrition</h1>
-        <input type="text" placeholder="Search.." name="search" onChange={this.searchFood} />
+        <input type="text" placeholder="Search.." className="search" onChange={this.searchFood} />
+        </div>
         <br></br>
         {this.showFoodForm()}
         <br></br>
